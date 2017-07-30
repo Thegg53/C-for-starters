@@ -58,7 +58,10 @@ Back in terminal:
     source .profile
     
     
-There might be a need to call __source .profile__ every time  you call a terminal window
+There might be a need to call __source .profile__ every time  you call a terminal window. Otherwise, just get used to write __./__ before calling the new file. Example:
+        
+        gcc -o hi helloWorld.c
+        ./hi
 
 
 
