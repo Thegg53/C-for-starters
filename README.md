@@ -3,9 +3,9 @@ Helping my cousin out to learn C. There will be a few links and sample programs 
 
 ### How to Compile and execute a program: 
 
-gcc -o nameOfExecutable nameOfProgram.C (press enter)
+    gcc -o nameOfExecutable nameOfProgram.C (press enter)
 
-nameOfExecutable (press Enter)
+    nameOfExecutable (press Enter)
 
 
 ### Windows installations:
@@ -56,6 +56,9 @@ Copy and paste the following in the .profile, save and close it:
 Back in terminal:
 
     source .profile
+    
+    
+There might be a need to call __source .profile__ every time  you call a terminal window
 
 
 
