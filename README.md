@@ -10,11 +10,14 @@ nameOfExecutable (press Enter)
 
 Windows installations:
 
-MinGW link: https://sourceforge.net/projects/mingw/?source=typ_redirect
+MinGW link: 
+  https://sourceforge.net/projects/mingw/?source=typ_redirect
 
-How to install MinGW: https://www.youtube.com/watch?v=0Gj5TZORCE0
+How to install MinGW: 
+  https://www.youtube.com/watch?v=0Gj5TZORCE0
 
-setting environment variable: https://superuser.com/questions/949560/how-do-i-set-system-environment-variables-in-windows-10
+setting environment variable: 
+  https://superuser.com/questions/949560/how-do-i-set-system-environment-variables-in-windows-10
 
 
 
