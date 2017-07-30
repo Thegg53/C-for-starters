@@ -74,6 +74,18 @@ https://cosmolearning.org/courses/introduction-c-programming-by-thenewboston/
 
 ## Basic debugging:
 
-using console and basic gdb https://www.youtube.com/watch?v=d_LG0PBj-xI
-online debugger: https://www.onlinegdb.com/
-quick guide on how to use the online debugger: https://www.onlinegdb.com/blog/brief-guide-on-how-to-use-onlinegdb-debugger/
+using console and basic gdb 
+
+https://www.youtube.com/watch?v=d_LG0PBj-xI
+
+
+
+online debugger:
+
+https://www.onlinegdb.com/
+
+
+
+quick guide on how to use the online debugger:
+
+https://www.onlinegdb.com/blog/brief-guide-on-how-to-use-onlinegdb-debugger/
