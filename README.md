@@ -1,14 +1,14 @@
 # C-for-starters
 Helping my cousin out to learn C. There will be a few links and sample programs until he works is way up to a snake game.
 
-## How to Compile and execute a program: 
+### How to Compile and execute a program: 
 
 gcc -o nameOfExecutable nameOfProgram.C (press enter)
 
 nameOfExecutable (press Enter)
 
 
-## Windows installations:
+### Windows installations:
 
 MinGW link: 
   
@@ -24,14 +24,14 @@ setting environment variable:
 
 
 
-## codeBlocks:
+### codeBlocks:
 
 
 http://www.codeblocks.org/downloads
 
 
 
-##Ubuntu:
+### Ubuntu:
 
 gcc should be pre-installed.
 
@@ -45,7 +45,7 @@ http://www.akira.ruc.dk/~keld/teaching/CAN_e14/Readings/How%20to%20Compile%20and
 
 
 
-##The New Boston series of tutorials:
+### The New Boston series of tutorials:
 
 
 https://cosmolearning.org/courses/introduction-c-programming-by-thenewboston/
