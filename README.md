@@ -37,11 +37,25 @@ gcc should be pre-installed.
 
 You can use gedit to edit text, or download sublime text 3. Call sublime by writing subl in the terminal.
 
-How to configure the path to avoid writing ./ after code compillation:
+##### How to configure the path to avoid writing ./ after code compillation:
 
 
 http://www.akira.ruc.dk/~keld/teaching/CAN_e14/Readings/How%20to%20Compile%20and%20Run%20a%20C%20Program%20on%20Ubuntu%20Linux.pdf
 
+
+Open the terminal in the root:
+
+gedit .profile
+
+
+Copy and paste the following in the .profile, save and close it:
+
+export PATH=.:$PATH
+
+
+Back in terminal:
+
+source .profile
 
 
 
