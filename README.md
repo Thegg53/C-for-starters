@@ -45,17 +45,17 @@ http://www.akira.ruc.dk/~keld/teaching/CAN_e14/Readings/How%20to%20Compile%20and
 
 Open the terminal in the root:
 
-gedit .profile
+    gedit .profile
 
 
 Copy and paste the following in the .profile, save and close it:
 
-export PATH=.:$PATH
+    export PATH=.:$PATH
 
 
 Back in terminal:
 
-source .profile
+    source .profile
 
 
 
