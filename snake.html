@@ -1,0 +1,116 @@
+<!--  here, we are writing in HTML language. Therefore, comments use <!-- and the 3 symbols at end of this line  -->
+<!--  creating a canvasas, the place where we will draw stuff--> 
+<canvas id="gc" width="400" height="400"></canvas> 
+
+<script>
+//here, I'm writing JavaScript (notice I'm inside the script tag)
+
+
+//quick note, we are not calling any variable with var to make them available for every function
+window.onload=function() { //window.onLoad is a general JS event. it is called whenever I the apge is loaded
+    canvas=document.getElementById("gc"); //get the HTML element with id 'gc'
+    ctx=canvas.getContext("2d");
+    document.addEventListener("keydown",keyPush); //whenever our document(page) 'listens' to the event "keydown", call the function keyPush
+												// keydown is a general JS event, the browser knows to call keydown whenever you press a key
+												// we don't need to code ir :D
+    setInterval(game,1000/15); //setInterval is another generic JS function. at a certain interval, in our case 1000 miliseconds / 15
+	// that means 15 calls per second, or a frame rate of 15. A better option is to create a variable, name it like frameRate and change that variable 
+	//whenever you want to adjust frame rate
+	// we call the "game" function once every 66/6miliseconds (1000/15)
+}
+
+
+px=py=10; //create a px (position x) and py (position y) and set them to 10
+gs=tc=20; //create a variable to hold grid size(20px) and a variable to hold tile count (20)(20x20 tiles, each 20px wide. it means we have 20x20px=400px, which fits perfectly in our 400px canvas. A better way was to create a variable for tc (tileCount), and then calculate grid size, to fit all screens
+ax=ay=15; //create variables to hold the positions of our food
+xv=yv=0; //create variables to hold initial velocity
+trail=[]; //create an array to hold the snake previous positions
+tail = 5; // create a variable that has the initial snake size (even though when the game begins, only one square is shown
+
+
+function game() {
+    px = px + xv; // position x = position x + velocity x
+    py = py + yv;
+	
+	//the following blocks controls the behaviour when we hit a wall (position x = 0 or the last tile (20-1)).
+	//our first tile is (0,0) and the last is (19,19), giving us a total of 20x20 grid size
+    if(px<0) {
+        px= tc-1;
+    }
+    if(px>tc-1) {
+        px= 0;
+    }
+    if(py<0) {
+        py= tc-1;
+    }
+    if(py>tc-1) {
+        py= 0;
+    }
+	
+	
+    ctx.fillStyle="black"; //set the painting color to black
+    ctx.fillRect(0,0,canvas.width,canvas.height);  //paint our context (the 2d visualization of our canvas), all black
+							// doing this every time we call game means we do not have to "delete"previous positions of the snake
+							//canvas is an object with properties, width and height. Therefore we can paint our context
+							//from 0 to canvas.width and from 0 to canvas.height in black
+							//it makes sense to read the canvas dimensions instead of create variables. this way they are //related to the html element we created, avoiding the need to define them again
+ 
+ 
+    ctx.fillStyle="lime"; //from now on, we will paint contexts green
+    for(var i=0;i<trail.length;i++) { //trial is the array that has the "snake" itself. snake.length tells us how many
+									  //elements exist in trail. That is the number of squares we want to paint
+        ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2); //get each element of the snake (trail[i]) x an y properties
+										// trail[i].x and trail[i].y and multiply by grid size.
+										//from that corner trail[i].x*gs,trail[i], paint a Rectangle with size gs-2 =  18px
+										// With our 18px rectangles, we can see black lines for snake "sections"try changing the
+										//2 for other numbers. If it is 0, we dont see the black lines. if it is very big, we cant see the green 
+										
+        if(trail[i].x==px && trail[i].y==py) { //this is a very simple way to check if we it ourselves. If our snake head (px,py)
+		//hits any of our body (trail), we set our size/length to 5, efectively restarting the game (if we had a score, set it to 0
+            tail = 5;
+        }
+    }
+	
+	
+	//send the new position px and py to the end of the trail
+    trail.push({x:px,y:py}); //https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+    
+	//we want to delete the oldest position. we only want to do this after the snake is fully rendered
+	while(trail.length>tail) {
+		trail.shift(); //https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+    }
+ 
+	//if our position is the same as our food
+    if(ax==px && ay==py) {
+        tail++; // increase the size ( tail++ is a short way to write tail = tail + 1
+        ax=Math.floor(Math.random()*tc); //set the food at a new position ax,ay
+        ay=Math.floor(Math.random()*tc); //Math.random creates a random number from 0 to 1
+										// multiply that number by the tile count (20).
+										//since our number will de a float and our grid only has 20 positions, we need to truncate the non integer part, for that we use Math.floor
+    }
+    ctx.fillStyle="red"; //set our new color to red to draw the food
+    ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2); // create a new rectangle, at position ax*gs, ay*gs  (the coordinates of food multiplied by grid size
+										//make the rectangle grid size - 2 pixels wide (18px), to keep a tiny black liny if the snake passes by
+										// change this nu,ber, try it out. food size will change :D
+}
+
+
+function keyPush(evt) { //the function we call whenever a key is pressed
+						//evt is a short name for the event (keydown)
+    switch(evt.keyCode) { //switch between the cases, changing by keyCode (different keys in the keyboard)
+						//keyCode is a property of the evt Object
+        case 37:
+            xv=-1;yv=0; //left
+            break;
+        case 38:
+            xv=0;yv=-1; //up (remember in JS y= 0 is the top of the screen and positive y values go down
+            break;
+        case 39:
+            xv=1;yv=0; //right
+            break;
+        case 40:
+            xv=0;yv=1; //down
+            break;
+    }
+}
+</script>
