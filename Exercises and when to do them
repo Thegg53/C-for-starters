@@ -1,0 +1,45 @@
+Following the New Boston tutorials:
+
+Exercise 1:
+Print "Welcome Everyone" to the console. Do this after video 4
+
+Exercise 2:
+Create a basic calculator function, that receives 3 parameters, 2 numbers and a letter. The numbers should be integers, the letter can be A for addition, S for Subtract, M to multiply, D to divide.
+  example input: calculate(5,4,M)
+  example output: The result for your multiplication is 20.
+  Do after video 12.
+  
+Exercise 3:
+  Calculate the average for results stored in a txt file. You can choose the format of the txt file, from one mumber per line, to all numbers in a line separated by a comma, a space and a comma, whatever. Choose a txt format to save the data, stick to it and give me the average. Do some research to see if you need an external library (besides stdio.h and stdlib.h, there are loads of useful libraries). There is no need to use a gazillion, libraries, sub some are useful
+  Example txt file1:  5, 18, 23, 47, 39
+  Example txt file2: 4 26 98 76
+  Example txt file3: 4,64,234,12,76,234
+  Example txt file4:  5
+                      8
+                      67  
+                      34  
+Do after video 25 (check videos 50 and 51 if you feel the need to do this exercise).
+
+Exercise 4:
+ Go to this website and generate 5 paragraphs of lorem ipsum. Save those 5 paragraphs in a txt file. Read that file, and tell me what is the most common character and how many times it appeared. 
+ Your program should receive the name of any text file, and be able to count which character appears the most
+ example input: characterCount(loremIpsum.txt)
+ example output: the most common character is "e" with a total of: 49 appearances
+ Do after video 30 (same thing about videos 50 and 51).
+ 
+ Exercise 5:
+  Make a blank line on the console with a 0 in the center. After the left key or right key is pressed, it should start moving to said direction. Define a refresh rate (how many times this should happen per second) and speed of the 0 movement. You can try to use the native C time and date functions, use timeouts/sleep or use some other library to control the refresh rate. The speed variable should be a simple number, to tell between how many frames the 0 should move 1 position
+  Do this after video 39
+  
+  Exercise 6:
+  The same as exercise 5, but use a green square for the "player" and a white background. Use whichever graphic library is necessary.
+  Do this after video 39.
+  
+  Exercise 7:
+  Same as exercise 5, but now the game lasts 10 seconds, and all the keys pressed are recorded in a txt file, as well as the position from left to right of the 0 in each frame. 
+  Do this after video 51
+  
+  Exercise 8:
+  Snake :D 
+  Finish the videos 
+  
