@@ -1,4 +1,6 @@
 # Latest files
+Execises and when to do them
+
 snake.html (a simple JS version of snake, inside a html page to run in any browser)
 
 # C-for-starters
